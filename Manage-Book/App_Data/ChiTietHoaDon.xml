@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ChiTietHoaDons>
+  <ChiTietHoaDon id="1" maHD="1" maSP="1" soLuong="2" giaBan="120000" />
+  <ChiTietHoaDon id="2" maHD="2" maSP="2" soLuong="2" giaBan="200000" />
+</ChiTietHoaDons>

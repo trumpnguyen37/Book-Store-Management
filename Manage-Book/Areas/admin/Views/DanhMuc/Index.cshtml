@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.DanhMuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+     QUẢN LÝ DANH MỤC SÁCH
+}
+
+@using (Html.BeginForm("Index", "DanhMuc", FormMethod.Get))
+{
+<div class="col-lg-12 form-group">
+    <div class="col-md-6">
+        @Html.ActionLink("Tạo mới", "Create", "DanhMuc", new { @class = "btn bg-delete" })
+    </div>
+    <div class="col-md-6 text-align">
+        @Html.TextBox("SearchString") <button class="btn bg-delete" type="submit">Tìm kiếm</button>
+    </div>
+</div>
+}
+<table class="table">
+    <tr>
+        <th>STT</th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenDanhMuc)
+        </th>
+        <th>Thao tác</th>
+    </tr>
+
+    @{ var i = 1;}
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@i</td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tenDanhMuc)
+    </td>
+
+    <td>
+        @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = " glyphicon glyphicon-pencil bg-red" })
+        </td>
+</tr>
+        i++;
+    }
+
+</table>

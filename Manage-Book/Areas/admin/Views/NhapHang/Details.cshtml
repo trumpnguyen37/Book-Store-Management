@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.NhapHang>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+     CHI TIẾT NHẬP SÁCH  @ViewBag.ncc
+}
+@{ var maNCC = "";}
+@foreach (var item in Model)
+{
+    maNCC = item.maNCC;
+    break;
+}
+    @using (Html.BeginForm("Details", "NhapHang", FormMethod.Get))
+    {
+<div class="col-lg-12 form-group">
+    <div class="col-md-6">
+        @Html.ActionLink("Đơn Nhập Mới", "Create_Nhap", new { id = maNCC }, new { @class = "btn bg-delete" })
+    </div>
+    <div class="col-md-6 text-align">
+        @Html.ActionLink("Quay lại", "Index", "NhapHang", new { @class = "btn bg-delete" })
+    </div>
+</div>
+    }
+@*<div class="col-lg-12 form-group">
+   
+</div>*@
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayNhap)
+        </th>
+
+        <th>Thao tác</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               <span>DN00</span>@Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayNhap)
+            </td>
+            <td>
+                @Html.ActionLink("Thêm Sách", "Create_chiTietNhap", new { id = item.id }, new { @class = "bg-red" }) &nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.ActionLink("Xem Chi Tiết", "Detail_Nhap", new { id = item.id }, new { @class = "bg-red" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,52 @@
+﻿@model CuoiKi.Areas.admin.Models.NguoiDung
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="~/Assets/admin/images/favicon.png">
+    <title>Login</title>
+    <!--Core CSS -->
+    <link href="~/Assets/admin/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Assets/admin/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Assets/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Assets/admin/css/style.css" rel="stylesheet">
+    <link href="~/Assets/admin/css/style-responsive.css" rel="stylesheet" />
+</head>
+<body class="login-body" style="background-color :#dedede;background-repeat:no-repeat;height:100vh">
+    <div class="container "> 
+        <div class="form-signin" style="background-color: white; max-width: 460px;">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                    <h2 class="form-signin-heading " style="background-color: #ee2b69; border-bottom: 10px solid #ee2b69; font-size: 2.2rem; font-weight: 600 ">
+                    ĐĂNG NHẬP
+                </h2>
+                @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                <div class="login-wrap" style="background-color:white">
+                    <div class="user-login-info" style="background-color: white ">
+                        @Html.TextBoxFor(model => model.tenTK, new { @class = "form-control", @placeholder = "Tên tài khoản", @autofocus = "autofocus" })
+                        @Html.TextBoxFor(model => model.matKhau, new { @class = "form-control", @placeholder = "Mật khẩu", @type = "password" })
+                    </div>
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Nhớ tài khoản
+                        <span class="pull-right">
+                            <a data-toggle="modal" href="#myModal" style=" color: #ee2b69"> Quên mật khẩu?</a>
+                        </span>
+                    </label>
+                    <button class="btn btn-lg btn-login btn-block " style="background-color: #ee2b69; font-size: 1.3rem; font-weight: 600" type="submit">Đăng nhập</button>
+
+                </div>
+
+            }
+        </div>
+    </div>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="~/Assets/admin/js/jquery.js"></script>
+    <script src="~/Assets/admin/bs3/js/bootstrap.min.js"></script>
+</body>
+</html>

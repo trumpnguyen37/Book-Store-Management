@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ChiTietNhaps>
+  <ChiTietNhap id="1" maNhap="1" maSP="1" soLuong="50" giaNhap="50000" />
+  <ChiTietNhap id="2" maNhap="2" maSP="2" soLuong="50" giaNhap="50000" />
+  <ChiTietNhap id="3" maNhap="1" maSP="3" soLuong="50" giaNhap="50000" />
+  <ChiTietNhap id="4" maNhap="2" maSP="4" soLuong="50" giaNhap="50000" />
+  <ChiTietNhap id="5" maNhap="1" maSP="5" soLuong="50" giaNhap="50000" />
+</ChiTietNhaps>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SanPhams>
+  <SanPham id="1" mota="1" tenSanPham="Dế mèn thích phiêu lưu ký" maDM="1" gia="100000" soLuong="100" tinhTrang="1" hinhAnh="vanhoc.jpg" />
+  <SanPham id="2" mota="1" tenSanPham="Dế mèn phiêu lưu ký" maDM="1" gia="100000" soLuong="100" tinhTrang="1" hinhAnh="demen.jpg" />
+  <SanPham id="3" mota="2" tenSanPham="Sách giải văn học" maDM="2" gia="100000" soLuong="100" tinhTrang="1" hinhAnh="vanhoc.jpg" />
+  <SanPham id="4" mota="3" tenSanPham="Nhà giả kim" maDM="3" gia="100000" soLuong="100" tinhTrang="1" hinhAnh="ngk.jpg" />
+  <SanPham id="5" mota="3" tenSanPham="Lịch sử kinh tế học" maDM="4" gia="100000" soLuong="100" tinhTrang="1" hinhAnh="kinhte.jpg" />
+  <SanPham id="6" mota="4" tenSanPham="5000 điều kỳ thú" maDM="5" gia="100000" soLuong="100" tinhTrang="1" hinhAnh="khac1.jpg" />
+  <SanPham id="7" mota="123" tenSanPham="Sách demo 1" maDM="1" gia="123" soLuong="123" tinhTrang="1" hinhAnh="khac1.jpg" />
+  <SanPham id="8" mota="123" tenSanPham="Dế mèn không thích phiêu lưu ký" maDM="1" gia="123" soLuong="123" tinhTrang="1" hinhAnh="khac1.jpg" />
+</SanPhams>

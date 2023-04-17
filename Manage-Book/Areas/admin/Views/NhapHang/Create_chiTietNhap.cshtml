@@ -1,0 +1,71 @@
+﻿@model CuoiKi.Areas.admin.Models.ChiTietNhap
+
+@{
+    ViewBag.Title = "Create_chiTietNhap";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+@section header{
+    THÊM SÁCH CHO ĐƠN NHẬP HÀNG @ViewBag.ct
+}
+@section jsFooter{
+    <script src="/Assets/admin/js/controller/NhapHangController.js"></script>
+
+}
+@using (Html.BeginForm("Create_chiTietNhap", "NhapHang", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="col-lg-12 form-group">
+            <div class="col-md-6">
+                @Html.ActionLink("Quay lại", "Details", "NhapHang", new { @id = ViewBag.ncc }, new { @class = "btn bg-delete" })
+            </div>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div class = "control-label col-md-2">
+                Danh mục
+            </div>
+        
+            <div class="col-md-10">
+                @Html.DropDownList("maDM", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlDanhMuc" })
+                @Html.ValidationMessageFor(model => model.maDM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                Sách
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("maSP", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlSanPham" })
+                @Html.ValidationMessageFor(model => model.maSP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.soLuong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.soLuong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.soLuong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.giaNhap, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.giaNhap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.giaNhap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn bg-delete">Tạo</button>
+            </div>
+        </div>
+    </div>
+}
+

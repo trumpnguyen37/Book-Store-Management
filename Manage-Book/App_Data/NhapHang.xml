@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<NhapHangs>
+  <NhapHang id="1" ngayNhap="2022-12-05" maNCC="1" />
+  <NhapHang id="2" ngayNhap="2022-12-05" maNCC="2" />
+  <NhapHang id="3" ngayNhap="2022-12-15" maNCC="1" />
+  <NhapHang id="4" ngayNhap="2022-12-15" maNCC="1" />
+  <NhapHang id="5" ngayNhap="2022-12-15" maNCC="1" />
+  <NhapHang id="6" ngayNhap="2022-12-15" maNCC="1" />
+</NhapHangs>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Quyens>
+  <Quyen id="1" tenQuyen="Admin" />
+  <Quyen id="2" tenQuyen="Nhân viên" />
+  <Quyen id="3" tenQuyen="Khách hàng" />
+</Quyens>

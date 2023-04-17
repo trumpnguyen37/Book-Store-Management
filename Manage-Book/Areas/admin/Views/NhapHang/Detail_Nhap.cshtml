@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.ChiTietNhap>
+
+@{
+    ViewBag.Title = "Detail_Nhap";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+  CHI TIẾT NHẬP HÀNG NGÀY @ViewBag.ngay
+}
+@{ var maNhap = 0;}
+@foreach (var item in Model)
+{
+    maNhap = int.Parse(item.maNhap);
+    break;
+}
+    <div class="col-lg-12 form-group">
+        <div class="col-md-6">
+            @Html.ActionLink("Quay lại", "Details", "NhapHang", new { id = ViewBag.ncc },  new { @class = "btn bg-delete" })
+        </div>
+    </div>
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>STT</th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaNhap)
+        </th>
+        <th>Thành tiền</th>
+    </tr>
+
+    @{ var i = 1;
+        var tong = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@i</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soLuong)
+            </td>
+            <td>
+                @String.Format("{0:0,0 VNĐ}", (item.giaNhap))
+            </td>
+            <td>
+                @String.Format("{0:0,0 VNĐ}", (item.thanhTien))
+            </td>
+
+        </tr>
+        tong = tong + item.thanhTien;
+    }
+
+</table>
+
+<p>Tổng Tiền: @String.Format("{0:0,0 VNĐ}", (tong))</p>

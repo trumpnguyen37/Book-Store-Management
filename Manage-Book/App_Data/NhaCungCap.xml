@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<NhaCungCaps>
+  <NhaCungCap id="1" tenNhaCungCap="Kho sách Quảng Bình" SDT="0373532115" diaChi="Quảng Bình" email="qbbook@gmail.com" />
+  <NhaCungCap id="2" tenNhaCungCap="Kho sách Đà Nẵng" SDT="0373532123" diaChi="Đà Nẵng" email="dnbook@gmail.com" />
+</NhaCungCaps>

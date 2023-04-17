@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<NguoiDungs>
+  <NguoiDung id="1" ten="Nguyễn Văn Trung" diaChi="Quảng Bình" SDT="0373532115" gioiTinh="Nam" email="trung@gmail.com" CMND="04420200468" tenTaiKhoan="admin" matKhau="123456" maQuyen="1" trangThai="1" />
+  <NguoiDung id="2" ten="Bùi Viết Trường" diaChi="Đà Nẵng" SDT="0977038241" gioiTinh="Nam" email="truong@gmail.com" CMND="044202048101" tenTaiKhoan="truong" matKhau="123456" maQuyen="2" trangThai="1" />
+  <NguoiDung id="3" ten="Hoàng Thái Thắng" diaChi="Quảng Trị" SDT="0367842145" gioiTinh="Nam" email="thang@gmail.com" CMND="02320200468" tenTaiKhoan="thang" matKhau="123456" maQuyen="3" trangThai="1" />
+  <NguoiDung id="4" ten="Nguyễn Thị Nga" diaChi="Quảng Bình" SDT="0905532487" gioiTinh="Nữ" email="nga@gmail.com" CMND="04820200120" tenTaiKhoan="nga" matKhau="123456" maQuyen="3" trangThai="1" />
+</NguoiDungs>

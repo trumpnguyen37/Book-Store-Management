@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<DanhMucs>
+  <DanhMuc id="1" tenDanhMuc="Sách cho trẻ em" trangThai="1" />
+  <DanhMuc id="2" tenDanhMuc="Sách tham khảo" trangThai="1" />
+  <DanhMuc id="3" tenDanhMuc="Văn học" trangThai="1" />
+  <DanhMuc id="4" tenDanhMuc="Kinh Tế" trangThai="1" />
+  <DanhMuc id="5" tenDanhMuc="Khác" trangThai="1" />
+</DanhMucs>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+ QUẢN LÝ ĐƠN HÀNG
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+         Mã Khách Hàng
+        </th>
+        <th>
+            Tên Khách Hàng
+        </th>
+        <th>
+          Ngày Bán
+        </th>
+        <th>Thao Tác</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        <span>HD00</span>@Html.DisplayFor(modelItem => item.id)
+    </td>
+    <td> 
+        <span>HD00</span>@Html.DisplayFor(modelItem => item.maKH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tenKH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngayNhap)
+    </td>
+    <td>
+        @Html.ActionLink("Xem Chi Tiết", "Details", new { id = item.id }, new { @class = "bg-red" })
+    </td>
+</tr>
+    }
+
+</table>

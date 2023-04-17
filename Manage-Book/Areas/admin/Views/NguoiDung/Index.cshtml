@@ -1,0 +1,84 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+   QUẢN LÝ NGƯỜI DÙNG
+}
+
+@using (Html.BeginForm("Index", "NguoiDung", FormMethod.Get))
+{
+<div class="col-lg-12 form-group">
+    <div class="col-md-6">
+        @Html.ActionLink("Tạo mới", "Create", "NguoiDung", new { @class = "btn bg-delete" })
+    </div>
+    <div class="col-md-6 text-align">
+        @*@Html.TextBox("SearchString")*@
+        <input id="SearchString" name="SearchString" type="text" value=""><button class="btn bg-delete" type="submit">Tìm kiếm</button>
+    </div>
+</div>
+}
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        <th>
+            Họ Tên
+        </th>
+        <th>
+          Tên Tài Khoản
+        </th>
+        <th>
+          Mật Khẩu
+        </th>
+
+        <th>
+            Quyền
+        </th>
+        <th>
+            Trạng Thái
+        </th>
+        <th>Thao Tác</th>
+    </tr>
+@{ var i = 1;}
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @i
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ten)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.tenTK)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.matKhau)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.quyen)
+    </td>
+    <td>
+        @if (item.trangThai)
+        {<span class="btn-success active"
+               >Hoạt động</span> }
+        else
+        {
+            <span class="btn-danger active color-red">Khóa</span>
+        }
+
+    </td>
+
+    <td>
+        @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "glyphicon glyphicon-pencil bg-red" })
+</tr>
+    i++;
+}
+
+</table>

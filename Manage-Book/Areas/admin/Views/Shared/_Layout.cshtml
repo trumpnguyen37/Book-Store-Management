@@ -1,0 +1,219 @@
+﻿@using CuoiKi.Areas.admin.Models
+@using CuoiKi.Common
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="~/Assets/admin/images/favicon.png">
+    <title>@ViewBag.Title - Trang Quản trị</title>
+    <!--Core CSS -->
+    <link href="~/Assets/admin/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Assets/admin/js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+    <link href="~/Assets/admin/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Assets/admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Assets/admin/js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <link href="~/Assets/admin/css/clndr.css" rel="stylesheet">
+    <!--clock css-->
+    <link href="~/Assets/admin/js/css3clock/css/style.css" rel="stylesheet">
+
+    <!--Morris Chart CSS -->
+    <link rel="~/Assets/admin/stylesheet" href="~/Assets/admin/js/morris-chart/morris.css">
+    <!-- Custom styles for this template -->
+    <link href="~/Assets/admin/css/style.css" rel="stylesheet">
+    <link href="~/Assets/admin/css/style-responsive.css" rel="stylesheet" />
+    <link href="~/Assets/admin/css/custom.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .textcolor {
+            color: #ee2b69 !important;
+        }
+        .form-control:focus {
+            border-color: #ee2b69 !important;
+        }
+        .dropdown-menu a:hover i {
+            color: #ee2b69 !important;
+        }
+    </style>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+</head>
+<body>
+    <section id="container">
+        <!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
+
+                <h2 class="logo"><img src="https://i.pinimg.com/originals/3c/7a/f3/3c7af3c03a1fc34f679d6cb8d1af703a.png" width="150px" height="70px" style="object-fit: cover; margin-top: -10px"/></h2> 
+
+            </div>
+            <!--logo end-->
+
+
+            <div class="top-nav clearfix">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="">
+                            <span class="username">
+                                @{
+                                    var session = (NguoiDung)Session[Constants.USER_SESSION];
+                                    if (session != null)
+                                    { @session.tenTK;
+                                }
+                                }
+                            </span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            @*<li><a href="#"><i class=" fa fa-suitcase"></i>Thông tin</a></li>*@
+
+                            <li>
+                                <a href="@Url.Action("Index","Login")">
+                                    <i class="fa fa-key"></i> Đăng Xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->
+                <div class="leftside-navigation">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li class="sub-menu">
+                            <ul class="sub" style="color: #ee2b69">
+                                <li><a href="~/Admin/NguoiDung/Index" class="textcolor">Quản Lý Người Dùng</a></li>
+                                <li><a href="~/Admin/DanhMuc/Index" class="textcolor">Loại sách</a></li>
+                                <li><a href="~/Admin/SanPham/Index" class="textcolor">Sách</a></li>
+                                <li><a href="~/Admin/NhapHang/Index" class="textcolor">Quản Lý Nhập sách</a></li>
+                                <li><a href="~/Admin/HoaDon/Index" class="textcolor">Đơn Hàng</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+
+                <!--mini statistics start-->
+                <!--mini statistics start-->
+                <!--mini statistics end-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--earning graph start #364a63-->
+                        <section class="panel">
+                            <header class="panel-heading">
+                                <label style="color: #ee2b69; font-size: 1.9rem "><b>@RenderSection("header", required: true)</b></label>
+                            </header>
+                            <div class="panel-body">
+                                <div class="tbao">
+                                    @if (TempData["AlertMessage"] != null)
+                                    {
+                                        @*<div id="Alert" class="alert @TempData["AlertType"] hide">
+                            @TempData["AlertMessage"]
+                        </div>*@
+                                        <div id="Alert" class="alert @TempData["AlertType"] hide">
+                                            @TempData["AlertMessage"]
+                                        </div>
+                                    }
+                                </div>
+
+                                @RenderBody()
+                            </div>
+
+                        </section>
+                        <!--earning graph end-->
+                    </div>
+
+                </div>
+                <!--mini statistics start-->
+                <!--mini statistics end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--right sidebar start-->
+        <!--right sidebar end-->
+    </section>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="~/Assets/admin/js/jquery.js"></script>
+    <script src="~/Assets/admin/js/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="~/Assets/admin/bs3/js/bootstrap.min.js"></script>
+    <script src="~/Assets/admin/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Assets/admin/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Assets/admin/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="~/Assets/admin/js/jquery.nicescroll.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+    <script src="~/Assets/admin/js/skycons/skycons.js"></script>
+    <script src="~/Assets/admin/js/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="~/Assets/admin///cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="~/Assets/admin/js/calendar/clndr.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="~/Assets/admin/js/calendar/moment-2.2.1.js"></script>
+    <script src="~/Assets/admin/js/evnt.calendar.init.js"></script>
+    <script src="~/Assets/admin/js/jvector-map/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Assets/admin/js/jvector-map/jquery-jvectormap-us-lcc-en.js"></script>
+    <script src="~/Assets/admin/js/gauge/gauge.js"></script>
+    <!--clock init-->
+    <script src="~/Assets/admin/js/css3clock/js/css3clock.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="~/Assets/admin/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="~/Assets/admin/js/sparkline/jquery.sparkline.js"></script>
+    <!--Morris Chart-->
+    <script src="~/Assets/admin/js/morris-chart/morris.js"></script>
+    <script src="~/Assets/admin/js/morris-chart/raphael-min.js"></script>
+    <!--jQuery Flot Chart-->
+    <script src="~/Assets/admin/js/flot-chart/jquery.flot.js"></script>
+    <script src="~/Assets/admin/js/flot-chart/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Assets/admin/js/flot-chart/jquery.flot.resize.js"></script>
+    <script src="~/Assets/admin/js/flot-chart/jquery.flot.pie.resize.js"></script>
+    <script src="~/Assets/admin/js/flot-chart/jquery.flot.animator.min.js"></script>
+    <script src="~/Assets/admin/js/flot-chart/jquery.flot.growraf.js"></script>
+    <script src="~/Assets/admin/js/dashboard.js"></script>
+    <script src="~/Assets/admin/js/jquery.customSelect.min.js"></script>
+    <!--common script init for all pages-->
+    <script src="~/Assets/admin/js/scripts.js"></script>
+    <!--script for this page-->
+    <script src="~/Scripts/sb-admin-2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Alert').removeClass('hide');
+            $('#Alert').delay(1000).slideUp(500);
+        })
+    </script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @RenderSection("jsFooter",required: false)
+</body>
+</html>

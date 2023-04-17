@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.ChiTietHoaDon>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    CHI TIẾT HÓA ĐƠN
+}
+<div class="col-lg-12 form-group ">
+    <div class="col-md-6">
+        @Html.ActionLink("Quay lại", "Index", "HoaDon", new { @class = "btn bg-delete" })
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maHD)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaBan)
+        </th>
+    </tr>
+    @{ var i = 1;
+        var tong = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <span>HD00</span>@Html.DisplayFor(modelItem => item.maHD)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soLuong)
+            </td>
+            <td>
+             
+                @String.Format("{0:0,0 VNĐ}", item.giaBan)
+            </td>
+            
+        </tr>
+        tong = tong + item.thanhTien;
+    }
+
+</table>
+<h5 >Tổng Tiền: @String.Format("{0:0,0 VNĐ}", @tong) </h5>

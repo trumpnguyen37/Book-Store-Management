@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<HoaDons>
+  <HoaDon id="1" maKH="1" ngayNhap="2022-12-06" trangThai="1" />
+  <HoaDon id="2" maKH="2" ngayNhap="2022-12-06" trangThai="1" />
+</HoaDons>

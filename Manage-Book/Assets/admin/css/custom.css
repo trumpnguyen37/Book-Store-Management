@@ -1,0 +1,168 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Mitr:wght@300;400;500;600;700&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800;900&family=Rammetto+One&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #eeeeee;
+    color:#000000;
+}
+
+
+
+.leftside-navigation, .right-stat-bar {
+    height: 100%;
+    background-color: #ffffff;
+    padding: 0 1rem;
+}
+.text-align{
+    text-align:right;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+#SearchString {
+    border: .1rem solid;
+    border-color: #ee2b69 !important; 
+    border-radius: 5px;
+    padding: .5rem;
+    outline: none;
+    margin-right: 10px;
+}
+
+.panel-heading label{
+    font-size:1.6rem !important;
+}
+
+ul.sidebar-menu li ul.sub li {
+    padding: 1rem;
+    background-color: #ebeef2;
+    font-size: 1.2rem !important;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10dp;
+    margin-left: 5dp;
+    margin-right: 5dp;
+}
+ul.sidebar-menu li ul.sub li:hover {
+    padding: 1rem;
+    background-color: #ebeef2;
+
+}
+.btn-red {
+    background-color: #ee2b69 !important;
+    border-color: #ee2b69 !important;
+    color: white !important;
+    font-weight: 600;
+}
+.col-md-6{
+   padding:0;
+}
+.active {
+    padding: .5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background: #08cd00 !important;
+    margin-top:.2rem;
+}
+
+.color-red{
+    background:#d51d1d !important;
+
+}
+.form-control{
+    color:#000000 !important;
+}
+.form-control:focus {
+   border-color: #ee2b69 !important;
+}
+.btn-violet:hover {
+    background-color: #ee2b69;
+    border-color: #ee2b69;
+    color: white;
+}
+
+#sidebar .sub-menu > .sub li a {
+    padding-left: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #8e6dfe;
+}
+ #sidebar .sub-menu > .sub li a:hover
+{
+    padding-left: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #a1adfd;
+    background-color: #ebeef2;
+}
+
+
+.form-control {
+    color: #000000 !important;
+}
+
+.brand {
+    background: #ffffff;
+}
+
+.logo{
+    font-size: 3rem;
+    font-weight: 600;
+    background-image: linear-gradient(to right bottom, #a1adfd, #854fff);
+    color: transparent;
+    -webkit-background-clip: text;
+    text-align:center;
+    background-clip: text;
+    margin-bottom: 3 rem;
+    padding: 0 2 rem;
+}
+
+.bg-red {
+    background: #08cd00 !important;
+    color: white;
+    padding:.5rem 1rem;
+}
+.btn-green {
+    background: #08cd00 !important;
+    color: white;
+}
+
+.bg-red:hover {
+    background: #4cff00 !important;
+    color: white;
+    padding: .5rem 1rem;
+}
+
+.bg-delete {
+    background: #fe3939 !important;
+    color: white !important;
+    padding: .5rem 1rem;
+}
+.bg-delete:hover {
+    background: #f93535 !important;
+    color: white;
+    padding: .5rem 1rem;
+}
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ebeef2;
+}
+
+
+.login-body {
+    background-color: white !important;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
